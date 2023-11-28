@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\DataLoad;
 use App\Models\Load;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataLoadController extends Controller
 {
@@ -16,20 +17,18 @@ class DataLoadController extends Controller
     public function index()
     {
         //
-        return response()->json('OK',200);
+        try {
+            return response()->json('OK GET',200);
+        } catch (\Exception $e) {
+            response()->json(['error' => $e->getMessage()],500);
+        }
+        
     }
 
     /**
      * Show the form for creating a new resource.
      */
     function create(Request $request) {
-        try {
-            //code...
-            return response()->json('OK',200);
-        } catch (\Throwable $th) {
-            //throw $th;
-            return response()->json(['error' => $th->getMessage()],500);
-        }
     }
 
     /**
@@ -37,7 +36,21 @@ class DataLoadController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            DB::transaction(function () use ($request) {               
+                DataLoad::create([
+                    'load_id' => 2,
+                    'longitude' => $request->input('longitude'),
+                    'latitude' => $request->input('latitude'),
+                    'day' => date('Y-m-d'),
+                    'time' => date('H:i:s'),
+                    'flow_sensor' => $request->input('flow_sensor'),
+                ]);
+            });
+            return response()->json('OK STORE',200);
+        } catch (\Exception $e) {
+            response()->json(['error' => $e->getMessage()],500);
+        }
     }
 
     /**
