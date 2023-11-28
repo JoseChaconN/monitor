@@ -28,7 +28,7 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <a class="btn btn-success" href="{{ $data->getMedia('file-load')->last()->getUrl() }}" download="">Descargar Archivo</a>
+                            <a class="btn btn-success" href="{{ (!empty($data->getMedia('file-load')->last())) ? $data->getMedia('file-load')->last()->getUrl() : '#' }}" download="">Descargar Archivo</a>
                         </div>
                     </div>
                     <div class="row mt-4">
