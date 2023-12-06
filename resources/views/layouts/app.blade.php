@@ -94,5 +94,33 @@
             <i class="fas fa-angle-up"></i>
         </a>
     </body>
-    
+    <script>
+        function obtenerUbicacion() {
+            if (navigator.geolocation) {
+                setInterval(function() {
+                    navigator.geolocation.getCurrentPosition(
+                        function(position) {
+                            var latitud = position.coords.latitude;
+                            var longitud = position.coords.longitude;
+                            var precision = position.coords.accuracy;
+
+                            // Hacer algo con los datos, como imprimirlos en la consola
+                            console.log("Latitud: " + latitud);
+                            console.log("Longitud: " + longitud);
+                            console.log("Precisión: " + precision + " metros");
+
+                            // Aquí puedes realizar acciones adicionales, como enviar los datos al servidor
+                            // por medio de una solicitud AJAX, almacenarlos localmente, etc.
+                        },
+                        function(error) {
+                            console.error("Error al obtener la ubicación: " + error.message);
+                        }
+                    );
+                }, 1000); // 1000 milisegundos = 1 segundo
+            } else {
+                console.error("Geolocalización no es soportada por este navegador.");
+            }
+        }
+        obtenerUbicacion();
+    </script>
 </html>
