@@ -21,6 +21,8 @@ return new class extends Migration
             $table->date('day')->nullable();
             $table->time('time')->nullable();
             $table->decimal('flow_sensor', 6, 3)->nullable();
+            $table->decimal('volumen', 6, 3)->nullable();
+            $table->boolean('updated_chart')->nullable()->default(false);
         });
     }
 

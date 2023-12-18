@@ -19,7 +19,7 @@
         
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
          
-        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="{{ asset('js/sb-admin-2.js') }}"></script>
         <script src="https://kit.fontawesome.com/80f4fbf326.js" crossorigin="anonymous"></script>
@@ -84,7 +84,7 @@
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; JeSistemas 2023</span>
+                            <span>Copyright &copy; Oneplaceone 2023</span>
                         </div>
                     </div>
                 </footer>
@@ -121,6 +121,6 @@
                 console.error("Geolocalización no es soportada por este navegador.");
             }
         }
-        obtenerUbicacion();
+        //obtenerUbicacion();
     </script>
 </html>

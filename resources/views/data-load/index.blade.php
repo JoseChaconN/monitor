@@ -27,9 +27,9 @@
                                 {{ $data->user_load->name }}
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <!--div class="col-md-12">
                             <a class="btn btn-success" href="{{ (!empty($data->getMedia('file-load')->last())) ? $data->getMedia('file-load')->last()->getUrl() : '#' }}" download="">Descargar Archivo</a>
-                        </div>
+                        </div-->
                     </div>
                     <div class="row mt-4">
                         <div class="col-lg-12">
@@ -51,6 +51,9 @@
                         </div>
                     </div>
                     <div class="row mt-4">
+                        <div class="col-md-12 mb-4">
+                            <button class="btn btn-primary btn-sm" type="button" onclick="location.reload()">Actualizar</button>
+                        </div>
                         <div class="col-md-12">
                             <table class="table table-bordered table-hover table-stripped">
                                 <thead>

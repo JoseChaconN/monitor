@@ -45,6 +45,7 @@ class DataLoadController extends Controller
                     'day' => date('Y-m-d'),
                     'time' => date('H:i:s'),
                     'flow_sensor' => $request->input('flow_sensor'),
+                    'volumen' => $request->input('volumen'),
                 ]);
             });
             return response()->json('OK STORE',200);

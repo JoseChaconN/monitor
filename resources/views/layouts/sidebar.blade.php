@@ -1,12 +1,12 @@
 
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
             <!--div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div-->
-            <div class="sidebar-brand-text mx-3">Gestor Inmobiliario</div>
+            <div class="sidebar-brand-text mx-3">Control Oneplaceone</div>
         </a>
 
         <!-- Divider -->
@@ -40,6 +40,19 @@
                         <a class="collapse-item" href="{{ route('load.index') }}">Archivos cargados</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('report.index') }}">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Monitorización</span>
+                </a>
+                {{-- <div id="collapseCustomers" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar" style="visibility: inherit">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="{{ route('load.create') }}">Cargar archivo nuevo</a>
+                        <a class="collapse-item" href="{{ route('load.index') }}">Archivos cargados</a>
+                    </div>
+                </div> --}}
             </li>
         {{-- @hasanyrole('admin|administrador') --}}
             <!-- Divider -->
