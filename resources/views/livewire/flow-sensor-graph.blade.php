@@ -5,7 +5,7 @@
         <div class="card border-left-primary shadow h-100 py-2">
             <div class="card-header">
                 <div class="col-md-12">
-                    <h6 class="font-weight-bold text-primary">Gráfico en tiempo real</h6>
+                    <h6 class="font-weight-bold text-primary">Sensor de Flujo</h6>
                 </div>
             </div>
             <div class="card-body">

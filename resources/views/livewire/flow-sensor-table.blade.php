@@ -18,14 +18,16 @@
                                 <thead>
                                     <tr>
                                         <th>Fecha</th>
-                                        <th>Flujo</th>
+                                        <th>Flujo (Litros por minuto)</th>
+                                        <th>Volumen (Litros)</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                         @foreach ($data as $item)
                                             <tr>
                                                 <td>{{\Carbon\Carbon::parse($item->created_at)->format('d-m-Y H:i:s')}}</td>
-                                                <td>{{ $item->flow_sensor }}</td>
+                                                <td>{{ $item->flow_sensor }} Lpm</td>
+                                                <td>{{ $item->volumen }}</td>
                                             </tr>
                                         @endforeach
                                 </tbody>
