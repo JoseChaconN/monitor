@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\DataLoadController;
+use App\Http\Controllers\API\DataLoadMallController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('v1/data-load', DataLoadController::class);
+Route::resource('v1/data-load-mall', DataLoadMallController::class);
 //Route::prefix('')->resource();

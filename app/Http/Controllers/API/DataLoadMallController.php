@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\DataLoad;
+use App\Models\DataLoadMall;
 use App\Models\Load;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class DataLoadController extends Controller
+class DataLoadMallController extends Controller
 {
     //
     /**
@@ -38,14 +38,14 @@ class DataLoadController extends Controller
     {
         try {
             DB::transaction(function () use ($request) {               
-                DataLoad::create([
+                DataLoadMall::create([
                     'load_id' => 2,
-                    'longitude' => (!empty($request->input('longitude'))) ? $request->input('longitude') : null,
-                    'latitude' => (!empty($request->input('latitude'))) ? $request->input('latitude') : null,
+                    'longitude' => $request->input('longitude'),
+                    'latitude' => $request->input('latitude'),
                     'day' => date('Y-m-d'),
                     'time' => date('H:i:s'),
-                    'flow_sensor' => (!empty($request->input('flow_sensor'))) ? $request->input('flow_sensor') : null,
-                    'volumen' => (!empty($request->input('volumen'))) ? $request->input('volumen') : null,
+                    'flow_sensor' => $request->input('flow_sensor'),
+                    'volumen' => $request->input('volumen'),
                 ]);
             });
             return response()->json('OK STORE',200);
@@ -69,7 +69,7 @@ class DataLoadController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(DataLoad $dataLoad)
+    public function edit(DataLoadMall $dataLoad)
     {
         //
     }
@@ -77,7 +77,7 @@ class DataLoadController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, DataLoad $dataLoad)
+    public function update(Request $request, DataLoadMall $dataLoad)
     {
         //
     }
@@ -85,7 +85,7 @@ class DataLoadController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(DataLoad $dataLoad)
+    public function destroy(DataLoadMall $dataLoad)
     {
         //
     }
